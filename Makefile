@@ -83,11 +83,14 @@ install-man:
 	  make \
 	    build-man; \
 	fi
-	for _file in $(MAN_FILES); do \
-          $(_INSTALL_FILE) \
-	    "$${PWD}/build/$${_file%.rst}" \
-	    "$(MAN_DIR)/man1/$${_file%.rst}"; \
-	done
+	# for _file in $(MAN_FILES); do \
+        #   $(_INSTALL_FILE) \
+	#     "$${PWD}/build/$${_file%.rst}" \
+	#     "$(MAN_DIR)/man1/$${_file%.rst}"; \
+	# done
+        $(_INSTALL_FILE) \
+	  "$${PWD}/build/$(_PROJECT).rst}" \
+	  "$(MAN_DIR)/man1/$(_PROJECT)-cmd.rst}"; \
 
 uninstall-man:
 
