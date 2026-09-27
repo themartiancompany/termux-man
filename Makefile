@@ -63,14 +63,20 @@ build-man:
 	    "$${_file}" \
 	    "$${PWD}/build/$${_file%.rst}"; \
 	done
+	cp \
+	  "variables.rst" \
+	  "$${PWD}/build"
 	for _suffix \
 	  in "-cli" \
 	     "-cmd"; do \
-	  echo \
-	    "$(_PROJECT)" | \
+	  cat \
+	    "$(_PROJECT).1.rst" | \
 	    sed \
 	      "s/$(_PROJECT)$\/$(_PROJECT)$${_suffix}/g; \
 	       s/$(_PROJECT) /$(_PROJECT)$${_suffix} /g" > \
+	    "$${PWD}/build/$(_PROJECT)$${_suffix}.1.rst"; \
+	  rst2man > \
+	    "$${PWD}/build/$(_PROJECT)$${_suffix}.1.rst" \
 	    "$${PWD}/build/$(_PROJECT)$${_suffix}.1"; \
 	done
 
