@@ -56,16 +56,79 @@ component of DogeOS.
 Options
 =======
 
--m method            Method to open the application.
-                     It can be 'root'.
+-m method
+
+  Method to open the application.
+  It can be 'root'.
+
+
+-T transition-type
+
+  Transition to show during application
+  launch.
+  It can be:
+  
+  - 'dim'
+  
+  - 'none'
+
+
+-D transition-duration
+
+  Switch/launch transition
+  duration in seconds.
+
+
+-k
+
+  Shows virtual keyboard at start.
+
+
+-K
+
+  Hides virtual keyboard at start.
+  This option works only if virtual
+  keyboard is set to start at
+  start through the app, otherwise,
+  or if virtual keyboard is set
+  to not appear when an hardware
+  keyboard is connected and the
+  hardware keyboard is currently
+  connected, enabling this option
+  will get back to the current
+  application in a second or two.
+
+
+-d delay
+
+  Delay in seconds from the start
+  of the application to show
+  or hide the keyboard.
+
+
+-c command
+
+  Runs the argument command in the
+  terminal. Currently implemented
+  using 'sudo input'.
 
 
 Application options
 =====================
 
--h                   Display help.
--c                   Enable color output
--v                   Enable verbose output
+-h
+
+  Display help.
+
+
+-c
+
+  Enable color output
+
+  
+-v
+
+  Enable verbose output
 
 
 Bugs
@@ -82,6 +145,7 @@ Copyright Pellegrino Prevete. AGPL-3.0.
 See also
 ========
 
+* sdotool
 * activity-launch
 * activity-focused
 * bbrightnessctl
