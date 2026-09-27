@@ -94,7 +94,6 @@ install-doc:
 	#   $(DOC_DIR)
 	$(INSTALL_FILE) \
 	  "README.md" \
-	  -t \
 	  $(DOC_DIR)/README.man.md
 
 install-man:
