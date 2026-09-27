@@ -123,4 +123,4 @@ uninstall-man:
 	  "$(MAN_DIR)/man1/$(_PROJECT)-cli" \
 	  "$(MAN_DIR)/man1/$(_PROJECT)-cmd"
 
-.PHONY: build-man install install-doc install-man uninstall-man
+.PHONY: build-man clean install install-doc install-man uninstall-man
