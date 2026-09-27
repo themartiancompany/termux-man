@@ -78,7 +78,7 @@ clean:
 
 	rm \
 	  -vrf \
-	  "build"
+	  "$${PWD}/build"
 
 install-doc:
 
