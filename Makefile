@@ -74,6 +74,12 @@ build-man:
 	    "$${PWD}/build/$(_PROJECT)$$(_suffix).1"; \
 	done
 
+clean:
+
+	rm \
+	  -vrf \
+	  "build"
+
 install-doc:
 
 	# $(INSTALL_FILE) \
