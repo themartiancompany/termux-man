@@ -69,7 +69,7 @@ build-man:
 	  echo \
 	    "$(_PROJECT)" | \
 	    sed \
-	      "s/$(_PROJECT)$/$(_PROJECT)$${_suffix}/g;
+	      "s/$(_PROJECT)$/$(_PROJECT)$${_suffix}/g; \
 	       s/$(_PROJECT) /$(_PROJECT)$${_suffix} /g" > \
 	    "$${PWD}/build/$(_PROJECT)$$(_suffix).1"; \
 	done
