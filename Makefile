@@ -63,6 +63,16 @@ build-man:
 	    "$${_file}" \
 	    "$${PWD}/build/$${_file%.rst}"; \
 	done
+	for _suffix \
+	  in "-cli" \
+	     "-cmd"; do \
+	  echo \
+	    "$(_PROJECT)" | \
+	    sed \
+	      "s/$(_PROJECT)$/$(_PROJECT)$${_suffix}/g;
+	       s/$(_PROJECT) /$(_PROJECT)$${_suffix} /g" > \
+	    "$${PWD}/build/$(_PROJECT)$$(_suffix).1"; \
+	done
 
 install-doc:
 
@@ -83,12 +93,15 @@ install-man:
 	  make \
 	    build-man; \
 	fi
-	# for _file in $(MAN_FILES); do \
-        #   $(_INSTALL_FILE) \
-	#     "$${PWD}/build/$${_file%.rst}" \
-	#     "$(MAN_DIR)/man1/$${_file%.rst}"; \
-	# done
-        $(_INSTALL_FILE) \
+	for _file in $(MAN_FILES); do \
+	  $(_INSTALL_FILE) \
+	    "$${PWD}/build/$${_file%.rst}" \
+	    "$(MAN_DIR)/man1/$${_file%.rst}"; \
+	done
+	$(_INSTALL_FILE) \
+	  "$${PWD}/build/$(_PROJECT).rst}" \
+	  "$(MAN_DIR)/man1/$(_PROJECT)-cli.rst}"; \
+	$(_INSTALL_FILE) \
 	  "$${PWD}/build/$(_PROJECT).rst}" \
 	  "$(MAN_DIR)/man1/$(_PROJECT)-cmd.rst}"; \
 
@@ -99,5 +112,9 @@ uninstall-man:
 	    -vrf \
 	    "$(MAN_DIR)/man1/$${_file%.rst}"; \
 	done
+	rm \
+	  -vrf \
+	  "$(MAN_DIR)/man1/$(_PROJECT)-cli" \
+	  "$(MAN_DIR)/man1/$(_PROJECT)-cmd"
 
 .PHONY: build-man install install-doc install-man uninstall-man
