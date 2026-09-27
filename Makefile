@@ -105,7 +105,7 @@ install-man:
 	    "$(MAN_DIR)/man1/$${_file%.rst}"; \
 	done
 	$(_INSTALL_FILE) \
-	  "$${PWD}/build/$(_PROJECT)-cli.1.rst}" \
+	  "$${PWD}/build/$(_PROJECT)-cli.1" \
 	  "$(MAN_DIR)/man1/$(_PROJECT)-cli.1"; \
 	$(_INSTALL_FILE) \
 	  "$${PWD}/build/$(_PROJECT)-cmd.1" \
