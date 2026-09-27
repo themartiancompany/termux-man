@@ -75,7 +75,7 @@ build-man:
 	      "s/$(_PROJECT)$\/$(_PROJECT)$${_suffix}/g; \
 	       s/$(_PROJECT) /$(_PROJECT)$${_suffix} /g" > \
 	    "$${PWD}/build/$(_PROJECT)$${_suffix}.1.rst"; \
-	  rst2man > \
+	  rst2man \
 	    "$${PWD}/build/$(_PROJECT)$${_suffix}.1.rst" \
 	    "$${PWD}/build/$(_PROJECT)$${_suffix}.1"; \
 	done
